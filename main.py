@@ -43,7 +43,7 @@ auc_requirements = {
                     val : {"item_name": val, "tier": tier2, "category": "", "price": int(price)}
                     }
 
-#enter api key in ""
+#API key here
 API_KEY = ""
 
 data = {}
@@ -110,7 +110,7 @@ for res in grequests.map([resp2]):
 first_page_time = time.time()
 
 urls = []
-for page_count in range(1, total_pages+1):
+for page_count in range(1, total_pages):
     urls.append(f"{url_base}&page={page_count}")
 
 resp = (grequests.get(url) for url in urls)
@@ -132,7 +132,7 @@ for res in grequests.map(resp):
                 hi = "hi"
 
     else:
-        print(f"Failed GET request: {data['cause']}")
+        print(f"Failed GET request: {data['cause']} pt 2")
 
 print(f"{len(auction_final)} items found")
 auction_final = sorted(auction_final, key=lambda x: (x[0], x[2]))
@@ -142,6 +142,7 @@ auction_final = sorted(auction_final, key=lambda x: (x[0], x[2]))
 pprint(auction_final)
 
 #num = priceOfRecomb + auction_final[0][2]
+NOTIFY = True
 #print(f"Total Cost: {num:,}")
 
 #copies to clipboard -- dont use this, throws weird errors
