@@ -43,7 +43,8 @@ auc_requirements = {
                     val : {"item_name": val, "tier": tier2, "category": "", "price": int(price)}
                     }
 
-API_KEY = "9446e61d-dfad-42da-aff2-1fc53bce5576"
+#enter api key in ""
+API_KEY = ""
 
 data = {}
 auction_final = []
